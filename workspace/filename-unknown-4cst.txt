@@ -1,0 +1,16 @@
+using System;
+using Xunit;
+using HelloWorld;
+
+namespace HelloWorld.Tests
+{
+    public class ProgramTests
+    {
+        [Fact]
+        public void TestHelloWorld()
+        {
+            var output = Program.PrintHelloWorld();
+            Assert.Equal("Hello, World!", output);
+        }
+    }
+}
