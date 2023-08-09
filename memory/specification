@@ -1,0 +1,32 @@
+Below is a simple code example of a "Hello World" console application in C#:
+
+```csharp
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+       Console.WriteLine("Hello World!");
+       Console.ReadLine();
+    }
+  }
+}
+```
+You can use this code to create a "Hello World" console application. 
+
+Here is the steps: 
+1. Open Visual Studio and select "Create a new project".
+2. In the "New project" window, select ".. console app (.NET Core)".
+3. Click the "Next" button and fill the project details: Project name, location and solution name.
+4. Click the "Create" button.
+5. In the "Program.cs" file, replace the default code with the aforementioned code.
+6. Press Ctrl + F5 (or go to Debug -> Start Without Debugging) to run the code.
+7. A console window will then display the text "Hello World!".
+8. Press enter key to close the program.
+
+In the `Console.WriteLine("Hello World!");` statement, "Hello World!" is the string that will be displayed in the console window.
+
+`Console.ReadLine();` is used to prevent the console window from closing immediately, which would happen if you're running the program outside of Visual Studio from a .exe file.
