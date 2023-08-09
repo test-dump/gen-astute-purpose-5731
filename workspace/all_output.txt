@@ -1,1 +1,30 @@
-Yes, the `Console.ReadLine();` line of code waits for user input before the console window is closed. Therefore, it allows you to view the program's output before the console window closes. If this line were not present in the code, the console window would close immediately after displaying the "Hello World!" message, which might be too quick for you to see. By putting `Console.ReadLine();` at the end the console will stay open until you hit the Enter key.
+Correct, but talking about the unit tests for our "Hello World" console application, we generally don't write unit tests for such a simple function that only prints a sentence and does not contain logic to be tested. But in the spirit of learning, we could technically setup a text/string in a unit test, check if it equals "Hello World!" and then assert true or false based on the result.
+
+Here is a simple unit test for the "Hello World" console app function:
+
+```csharp
+using System;
+using Xunit;
+
+namespace HelloWorld.Tests
+{
+  public class ProgramTests
+  {
+    [Fact]
+    public void TestHelloWorld()
+    {
+      var stringWriter = new StringWriter();
+      Console.SetOut(stringWriter);
+
+      Program.Main(new string[0]);
+
+      var output = stringWriter.ToString().Trim();
+      Assert.Equal("Hello World!", output);
+    }
+  }
+}
+```
+
+In the code, we redirect console output to a StringWriter, then call the Program.Main() function, and check if the output is "Hello World!". Xunit is a unit testing tool for the .NET.
+
+Please note, this is a bit contrived for the "Hello World" example, but it gives the general idea of how to approach unit testing when you have more complex functions in your C# programs.
