@@ -1,0 +1,20 @@
+using System;
+using Xunit;
+
+namespace HelloWorld.Tests
+{
+  public class ProgramTests
+  {
+    [Fact]
+    public void TestHelloWorld()
+    {
+      var stringWriter = new StringWriter();
+      Console.SetOut(stringWriter);
+
+      Program.Main(new string[0]);
+
+      var output = stringWriter.ToString().Trim();
+      Assert.Equal("Hello World!", output);
+    }
+  }
+}
